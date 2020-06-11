@@ -1,0 +1,21 @@
+#dialog_blackshield {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.2;	
+}/* #dialog_blackshield */
+
+
+div.dialog-window {
+	display: flex;	
+	align-items: center;
+}/* div.dialog-window */
+
+
+div.dialog-window > div.dialog-panel {
+	flex-grow: 1;		
+}/* div.dialog-window > div.dialog-panel */
+

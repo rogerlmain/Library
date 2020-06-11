@@ -1,0 +1,33 @@
+div.login-form div.password-cell {
+	display: flex;
+	flex-direction: row;
+}/* div.login-form div.password-cell */
+
+
+div.login-form {
+	display: grid;
+	grid-template-columns: repeat(2, [field] min-content);
+}/* div.login-form */
+
+
+div.login-form button {
+	border-radius: var(--medium-border-radius);
+	cursor: pointer;
+}/* div.login-form button */
+
+
+div.login-form div.form-fields { margin-right: 0.5em; }
+
+div.login-form div.password-cell input { margin-right: 0.5em }
+div.login-form div.password-cell img.password-eyeball { cursor: pointer }
+
+
+/********/
+
+
+div.form-fields {
+	align-items: center;
+	row-gap: 0.2em;
+}/* div.form-fields */
+
+

@@ -1,0 +1,300 @@
+/**** Debug Styles ****/
+
+
+*.outlined, *.outlined * { border: solid 1px red }
+
+
+/**** Core Layout Styles ****/
+
+
+html, body { 
+	width: 100%; 
+	height: 100%; 
+}/* html, body */
+
+
+body.fade_in { opacity: 0 }
+
+
+/**** Flex Layout Styles ****/
+
+
+*[class*=flex-column] {
+	display: flex;
+	flex-direction: column;
+}/* *[class*=flex-column] */
+
+
+*.left-flex-column	{ align-items: flex-start; }
+*.center-flex-column	{ align-items: center; }
+*.right-flex-column	{ align-items: flex-end; }
+
+
+*[class*=flex-row] {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center; 
+}/* *[class*=flex-row] */
+
+
+*.left-flex-row	{ justify-content: flex-start }
+*.center-flex-row	{ justify-content: center }
+*.right-flex-row	{ justify-content: flex-end }
+
+
+/*** Button Panel ****/
+
+
+div[class$=button-bar] {
+	display: flex;
+	margin-top: 0.5em;
+} /* div[class$=button-bar] */
+	
+div.left-button-bar, div.center-button-bar, div.right-button-bar { flex-direction: row; }
+div.top-button-bar, div.middle-button-bar, div.bottom-button-bar { flex-direction: column; }
+	
+div.left-button-bar,		div.top-button-bar	{ justify-content: flex-start; }
+div.center-button-bar,	div.middle-button-bar { justify-content: center; }
+div.right-button-bar,		div.bottom-button-bar { justify-content: flex-end; }
+
+div[class$=button-panel] > *:not(:last-child) { margin-right: 0.25em; }
+	
+	
+/*** Checkbox Cell ****/
+
+
+div.checkbox-cell {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}/* div.checkbox-cell */
+
+
+div.checkbox-cell input[type=checkbox] {
+	margin-right: 0.5em;
+}/* div.checkbox-cell input[type=checkbox] */
+
+
+/*** Centered / Centering Panel ****/
+
+
+div.centered-panel { 
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	border: solid 2px red;
+}/* div.centered-panel */
+
+
+div.centering-panel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}/* div.centering-panel */
+
+
+fade_item[href], *[onclick] { cursor: pointer; }
+
+
+/**** Starburst ****/
+
+
+*.starburst {
+
+	clip-path: polygon(
+	
+		 50%   0%,
+		 62%  15%,
+		 82%  12%,
+		 83%  32%,
+		100%  42%,
+		 87%  58%,
+		 94%  77%,
+		 74%  80%,
+		 67% 100%,
+		 50%  89%,
+		 33% 100%,
+		 26%  80%,
+		  6%  77%,
+		 13%  58%,
+		  0%  42%,
+		 17%  32%,
+		 18%  12%,
+		 38%  15%
+		
+	);
+	
+}/* *.starburst */
+
+
+/**** Global Styles ****/
+
+
+* { 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0; 
+}/* * */
+
+
+*.flexbox {
+	display: flex;
+}/* *.flexbox */
+
+
+*.hidden {
+	display: none;
+}/* hidden */
+
+
+*.outlined, *.outlined * {
+	border: solid 1px red;
+}/* *.outlined, *.outlined */
+
+
+*.centered, *.absolute-centered {
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+}/* *.centered, *.absolute-centered */
+
+
+*.absolute-right-aligned {
+	position: absolute;
+	left: 100%; 
+	top: 50%;
+	transform: translate(-100%, -50%);
+}/* *.absolute-right-aligned */
+
+
+
+*.right-aligned {
+	justify-self: right;
+	text-align: right;
+}/* *.right-aligned */
+
+
+/* DEPRECATED - USE [left/center/right]-flex-row INSTEAD */
+*.row-centered {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}/* row-centered */
+
+
+/* DEPRECATED - USE [left/center/right]-flex-column INSTEAD */
+*.column-centered {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}/* column-centered */
+
+
+*.flex-centered {
+	align-self: center;
+	justify-self: center;
+}/* flex-centered */
+
+
+/**** Table Styles ****/
+
+
+div[class*=-column-form], div[class*=-column-table] {
+	display: grid;
+}/* div[class$=-column-form], div[class$=-column-table] */
+	 
+
+div[class*=column-form] label {
+	white-space: nowrap;
+}/* div.one-column-form label */
+
+
+div.one-column-form { grid-template-columns: [label] min-content [field] 1fr; }
+div.two-column-form { grid-template-columns: repeat(2, [label] min-content [field] 1fr); }
+
+
+div.two-column-table	{ grid-template-columns: repeat(2, [field] 1fr); }
+div.three-column-table	{ grid-template-columns: repeat(3, [field] 1fr); }
+div.four-column-table	{ grid-template-columns: repeat(4, [field] 1fr); }
+
+
+/**** Class Styles ****/
+
+
+div[id$=_form][class*=column-form], div[id$=_form] [class*=column-form] {
+	display: inline-grid;
+}/* div[id$=_form][class*=column-form], div[id$=_form] [class*=column-form] */
+
+
+div[id$=_form] {
+	display: inline-grid;
+	white-space: nowrap;
+}/* div[id$=_form] */
+	
+	
+div.full-column-span {
+	grid-column: 1 / -1;
+}/* div.full-column-span */
+
+
+div.full-screen {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}/* div.full-screen */
+
+
+div.popup {
+	position: absolute;
+	visibility: hidden;
+	z-index: -1;
+}/* div.popup */
+
+
+/********/
+
+
+div.row-table {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}/* div.row-table */
+
+
+/* For subgrids within forms - e.g. city, state, zip */ 
+
+
+div.row-grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}/* div.row-grid */
+
+
+div.row-grid label {
+	margin: 0 1em;
+}/* div.row-grid label */
+
+
+div.row-grid input {
+	width: 100%;
+}/* div.row-grid input */ 
+
+
+/********/
+
+
+[popup] {
+	cursor: pointer;		
+}/* [popup] */
+
+ 
+
